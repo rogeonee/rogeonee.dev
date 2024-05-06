@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import { Header } from "../components/Header.tsx";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
@@ -15,7 +15,7 @@ const { pageTitle } = Astro.props;
   </head>
 
   <body>
-    <Header />
+    <Header client:only="react" />
     <h1>{pageTitle}</h1>
     <slot />
     <Footer />
