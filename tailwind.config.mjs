@@ -3,10 +3,10 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 	  fontFamily: {
-		inter: ['var(--font-inter)', 'sans-serif'],  // Assuming fallback to system sans-serif
-		poppins: ['var(--font-poppins)', 'sans-serif'],  // Assuming fallback to system sans-serif
-		'fira-code': ['var(--font-fira-code)', 'monospace'],  // Assuming fallback to system monospace
-		sans: ['var(--font-inter)', 'var(--font-poppins)', 'sans-serif'],  // Multiple custom fonts with fallback
+		inter: ['var(--font-inter)', 'sans-serif'],
+		poppins: ['var(--font-poppins)', 'sans-serif'],
+		'fira-code': ['var(--font-fira-code)', 'monospace'],
+		sans: ['var(--font-inter)', 'var(--font-poppins)', 'sans-serif'],
 	  },
 	  extend: {
 		colors: {
@@ -28,13 +28,13 @@ export default {
 			css: {
 			  color: theme('colors.gray.dark'),
 			  'h2, h3, h4': {
-				'scroll-margin-top': '8rem', // Adjusted to a fixed value if using spacing is not defined
+				'scroll-margin-top': '8rem',
 			  },
 			},
 		  },
 		}),
 	  },
 	},
-	plugins: [],  // No external plugins included
+	plugins: [],
 }
   

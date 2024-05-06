@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { motion, type Variants } from "framer-motion";
+import { FullScreenNav } from './FullScreenNav';
 
 const navLinks = [
   { name: "Home", pathname: "/" },
@@ -58,6 +59,10 @@ export function Header() {
                     <a 
                         className={classNames("relative block", isRouteActive && "font-semibold")} 
                         href={link.pathname}
+                        onClick={(e) => {
+                            window.history.pushState({}, '', link.pathname);
+                            setCurrentPath(link.pathname);
+                        }}
                     >
                         {link.name}
                     </a>
@@ -81,6 +86,8 @@ export function Header() {
           <span className="h-0.5 bg-secondary group-hover:bg-accent w-full" style={{ backgroundColor: 'black' }}/>
         </button>
       </nav>
+
+      <FullScreenNav isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </header>
   );
 }
