@@ -1,0 +1,60 @@
+---
+import { ArrowUpRight } from "./icons/arr-right-up";
+const socialLinks = [
+    { name: "GitHub", url: "https://github.com/rogeonee" },
+    { name: "LinkedIn", url: "https://linkedin.com/in/egor-bezriadin/" },
+];
+---
+
+<section id="contact" class="bg-secondary text-primary">
+    <div class="mx-auto max-w-6xl w-full py-32 px-5 md:px-0">
+        <h2 class="font-poppins font-medium text-4xl md:text-5xl relative max-w-fit leading-snug">
+            Have questions?
+            <br />
+            Ask them!
+        </h2>
+
+        <div class="flex flex-col md:flex-row mt-14 gap-12 justify-between">
+            <div class="w-full md:max-w-md">
+                <p class="text-gray-extralight font-medium text-inter">
+                    Some paragraph telling how I like connect with new people and don't hesitate 
+                    to reach out bla bla bla...
+                </p>
+
+                <div class="flex mt-14 gap-12 w-full">
+                    <ul class="flex flex-col gap-y-2">
+                        {socialLinks.map((link) => (
+                            <li class="group">
+                                <a
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="flex items-center gap-1 text-gray-extralight hover:text-primary"
+                                    href={link.url}
+                                >
+                                    {link.name}
+                                    <ArrowUpRight
+                                        className="group-hover:scale-110 origin-bottom-left transition"
+                                        width={12}
+                                        height={12}
+                                    />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div class="w-1/2">
+                        <p class="uppercase text-sm font-semibold mb-1 text-gray-extralight font-poppins">
+                            email me directly
+                        </p>
+                        <a href="mailto:egor.bezriadin.01@gmail.com" class="text-primary">
+                            egor.bezriadin.01@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>

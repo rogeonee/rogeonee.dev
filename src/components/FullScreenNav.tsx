@@ -1,8 +1,6 @@
-import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { X } from "@phosphor-icons/react";
 import { GithubLogo } from "./icons/github-logo";
-import { TwitterLogo } from "./icons/twitter-logo";
 import { LinkedinLogo } from "./icons/linkedin-logo";
 
 const navLinks = [
@@ -13,7 +11,6 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { name: "Twitter", url: "https://twitter.com/roge_one_", icon: TwitterLogo },
     { name: "GitHub", url: "https://github.com/rogeonee", icon: GithubLogo },
     { name: "LinkedIn", url: "https://linkedin.com/in/egor-bezriadin/", icon: LinkedinLogo },
 ];
