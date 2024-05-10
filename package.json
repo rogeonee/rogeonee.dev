@@ -10,14 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/react": "^3.3.2",
+    "@astrojs/check": "^0.6.0",
+    "@astrojs/react": "^3.3.4",
     "@astrojs/tailwind": "^5.1.0",
     "@hookform/resolvers": "^3.3.4",
     "@phosphor-icons/react": "^2.1.5",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.7.1",
+    "astro": "^4.8.2",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "framer-motion": "^11.1.7",
