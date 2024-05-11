@@ -1,11 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Contact from "../components/Contact.astro";
 import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
+import ProjectCarousel from "../components/ProjectCarousel.tsx";
+import Contact from "../components/Contact.astro";
 ---
 
 <BaseLayout pageTitle="Index">
 	<Hero />
+
+	<Skills />
+
+	<ProjectCarousel client:load />
 
 	<Contact />
 </BaseLayout>
