@@ -1,0 +1,35 @@
+---
+import { ArrowRight } from "@phosphor-icons/react";
+---
+
+<section class="min-h-[calc(100vh-60px)] flex flex-col justify-between gap-y-20 overflow-x-hidden pb-32 md:pb-0">
+    <div class="px-5 md:px-0 mt-12 flex flex-col md:flex-row w-full max-w-6xl mx-auto min-h-[70vh] tall:min-h-[50vh] md:items-center gap-5 md:justify-between">
+        <h1 class="text-[clamp(2.5rem,10vw,5rem)] font-bold leading-tight w-full md:min-w-[530px]">
+            From Russia <br /> with love ❤️
+        </h1>
+        <div class="mt-5 md:mt-0 text-base sm:text-lg md:text-xl max-w-lg w-fit font-medium font-inter text-gray-light">
+            <p>
+                One introduction paragraph telling about myself.
+                <br /> <br />Second introduction paragraph about myself, 
+                no idea tf I'm going to write here.
+            </p>
+
+            <div class="flex items-center gap-3 mt-7 w-full">
+                <a 
+                    href="/about"
+                    class="px-4 py-1.5 rounded-2xl bg-gray-dark border-2 border-gray-light hover:border-accent hover:bg-accent hover:text-secondary text-primary 
+                            focus-visible:bg-accent focus-visible:border-accent flex items-center gap-2 pr-2.5"
+                >
+                    About me
+                    <ArrowRight className="ml-1.5" width={20} height={20} />
+                </a>
+                <a 
+                    href="/projects"
+                    class="px-4 py-1.5 rounded-2xl border-2 border-gray-light text-secondary hover:border-accent focus-visible:border-accent"
+                >
+                    Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

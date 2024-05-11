@@ -1,7 +1,7 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { Warning } from "@phosphor-icons/react";
 import { Button } from './Button';
 
 const CONTACT_SCHEMA = z.object({
@@ -44,9 +44,14 @@ export function ContactForm() {
                     </label>
                     <input 
                         {...register("firstName")} 
-                        className="valid bg-gray-dark px-4 py-1.5 rounded-2xl border-gray-light focus:border-accent hover:border-accent/30" 
+                        className="valid bg-gray-dark px-4 py-1.5 rounded-2xl border-2 border-gray-light focus:border-accent hover:border-accent/30" 
                     />
-                    <p>{errors.firstName?.message}</p>
+                    {errors.firstName && (
+                        <p className="text-red-400 font-medium mt-0.5 flex items-center gap-2">
+                            <Warning className="fill-red-400" />
+                            {errors.firstName.message}
+                        </p>
+                    )}
                 </div>
 
                 <div className="flex flex-col mb-3 w-full">
@@ -55,9 +60,14 @@ export function ContactForm() {
                     </label>
                     <input 
                         {...register("lastName")} 
-                        className="valid bg-gray-dark border-gray-light focus:border-accent hover:border-accent/30 px-4 py-1.5 rounded-2xl" 
+                        className="valid bg-gray-dark border-2 border-gray-light focus:border-accent hover:border-accent/30 px-4 py-1.5 rounded-2xl" 
                     />
-                    <p>{errors.lastName?.message}</p>
+                    {errors.lastName && (
+                        <p className="text-red-400 font-medium mt-0.5 flex items-center gap-2">
+                            <Warning className="fill-red-400" />
+                            {errors.lastName.message}
+                        </p>
+                    )}
                 </div>
             </div>
 
@@ -68,9 +78,14 @@ export function ContactForm() {
                 <input 
                     {...register("email")} 
                     type="email" 
-                    className="valid bg-gray-dark border-gray-light focus:border-accent hover:border-accent/30 px-4 py-1.5 rounded-2xl" 
+                    className="valid bg-gray-dark border-2 border-gray-light focus:border-accent hover:border-accent/30 px-4 py-1.5 rounded-2xl" 
                 />
-                <p>{errors.email?.message}</p>
+                {errors.email && (
+                    <p className="text-red-400 font-medium mt-0.5 flex items-center gap-2">
+                        <Warning className="fill-red-400" />
+                        {errors.email.message}
+                    </p>
+                )}
             </div>
 
 
@@ -80,9 +95,14 @@ export function ContactForm() {
                 </label>
                 <textarea 
                     {...register("message")} 
-                    className="valid bg-gray-dark border-gray-light focus:border-accent hover:border-accent/30 px-4 py-1.5 rounded-2xl"
+                    className="valid bg-gray-dark border-2 border-gray-light focus:border-accent hover:border-accent/30 px-4 py-1.5 rounded-2xl"
                 />
-                <p>{errors.message?.message}</p>
+                {errors.message && (
+                    <p className="text-red-400 font-medium mt-0.5 flex items-center gap-2">
+                        <Warning className="fill-red-400" />
+                        {errors.message.message}
+                    </p>
+                )}
             </div>
 
 
