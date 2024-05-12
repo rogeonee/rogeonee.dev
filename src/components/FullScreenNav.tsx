@@ -2,6 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { X } from "@phosphor-icons/react";
 import { GithubLogo } from "./icons/github-logo";
 import { LinkedinLogo } from "./icons/linkedin-logo";
+import { Link } from "./Link.tsx";
 
 const navLinks = [
   { name: "Home", pathname: "/" },
@@ -46,15 +47,16 @@ export function FullScreenNav(props: FullScreenNavProps) {
           <ul className="flex flex-col gap-y-8">
             {navLinks.map((link) => (
               <li key={link.pathname}>
-                <a
+                <Link 
+                  href={link.pathname}
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold hover:text-accent transition"
                   onClick={(e) => {
                     props.onClose();
                   }}
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold hover:text-accent transition"
-                  href={link.pathname}
+                  override={true}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -73,17 +75,16 @@ export function FullScreenNav(props: FullScreenNavProps) {
         <ul className="mt-20 md:mt-32 flex flex-row gap-10">
           {socialLinks.map((link) => (
             <li key={link.url}>
-              <a
+              <Link
+                href={link.url}
                 aria-label={link.name}
                 onClick={(e) => {
                   props.onClose();
                 }}
-                target="_blank"
-                rel="noreferrer"
-                href={link.url}
+                override={true}
               >
                 <link.icon className="w-9 h-9 sm:w-12 sm:h-12 md:w-16 md:h-16 hover:fill-accent transition" />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

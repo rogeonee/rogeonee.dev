@@ -1,5 +1,6 @@
 ---
 import { ContactForm } from "./ContactForm";
+import { Link } from "./Link.tsx";
 import { ArrowUpRight } from "./icons/arr-right-up";
 const socialLinks = [
     { name: "GitHub", url: "https://github.com/rogeonee" },
@@ -26,11 +27,10 @@ const socialLinks = [
                     <ul class="flex flex-col gap-y-2">
                         {socialLinks.map((link) => (
                             <li class="group">
-                                <a
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    class="flex items-center gap-1 text-gray-extralight hover:text-primary"
+                                <Link
                                     href={link.url}
+                                    override={true}
+                                    className="flex items-center gap-1 text-gray-extralight hover:text-primary"
                                 >
                                     {link.name}
                                     <ArrowUpRight
@@ -38,7 +38,7 @@ const socialLinks = [
                                         width={12}
                                         height={12}
                                     />
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -47,9 +47,13 @@ const socialLinks = [
                         <p class="uppercase text-sm font-semibold mb-1 text-gray-extralight font-poppins">
                             email me directly
                         </p>
-                        <a href="mailto:egor.bezriadin.01@gmail.com" class="text-primary">
+                        <Link
+                            href="mailto:egor.bezriadin.01@gmail.com"
+                            className="text-primary"
+                            override={true}
+                        >
                             egor.bezriadin.01@gmail.com
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 ---
-import { ArrowRight } from "@phosphor-icons/react";
+import { Link } from "./Link.tsx";
+import { ArrowRight } from "./icons/arr-right";
 ---
 
 <section class="min-h-[calc(100vh-60px)] flex flex-col justify-between gap-y-20 overflow-x-hidden pb-32 md:pb-0">
@@ -15,20 +16,22 @@ import { ArrowRight } from "@phosphor-icons/react";
             </p>
 
             <div class="flex items-center gap-3 mt-7 w-full">
-                <a 
+                <Link
                     href="/about"
-                    class="px-4 py-1.5 rounded-2xl bg-gray-dark border-2 border-gray-light hover:border-accent hover:bg-accent hover:text-secondary text-primary 
-                            focus-visible:bg-accent focus-visible:border-accent flex items-center gap-2 pr-2.5"
+                    intent="primary"
+                    size="default"
+                    extras="icon"
                 >
                     About me
                     <ArrowRight className="ml-1.5" width={20} height={20} />
-                </a>
-                <a 
+                </Link>
+
+                <Link
                     href="/projects"
-                    class="px-4 py-1.5 rounded-2xl border-2 border-gray-light text-secondary hover:border-accent focus-visible:border-accent"
+                    intent="secondary"
                 >
                     Projects
-                </a>
+                </Link>
             </div>
         </div>
     </div>

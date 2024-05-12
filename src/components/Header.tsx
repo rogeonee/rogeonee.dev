@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { motion, type Variants } from "framer-motion";
 import { FullScreenNav } from './FullScreenNav';
+import { Link } from './Link.tsx';
 
 const navLinks = [
   { name: "Home", pathname: "/" },
@@ -49,29 +50,30 @@ export function Header() {
             const isRouteActive = currentPath === link.pathname;
 
             return (
-                <motion.li
-                    initial="initial"
-                    whileHover="hover"
-                    animate={isRouteActive ? "active" : "initial"}
-                    key={link.pathname}
-                    style={{ position: 'relative' }}
+              <motion.li
+                initial="initial"
+                whileHover="hover"
+                animate={isRouteActive ? "active" : "initial"}
+                key={link.pathname}
+                style={{ position: 'relative' }}
+              >
+                <Link
+                  className={classNames("relative block", isRouteActive && "font-semibold")} 
+                  href={link.pathname}
+                  onClick={(e) => {
+                    window.history.pushState({}, '', link.pathname);
+                    setCurrentPath(link.pathname);
+                  }}
+                  override={true}
                 >
-                    <a 
-                        className={classNames("relative block", isRouteActive && "font-semibold")} 
-                        href={link.pathname}
-                        onClick={(e) => {
-                            window.history.pushState({}, '', link.pathname);
-                            setCurrentPath(link.pathname);
-                        }}
-                    >
-                        {link.name}
-                    </a>
-                    <motion.span
-                        variants={variants}
-                        className="absolute block left-0 -bottom-1 w-1/2 h-[2px] bg-secondary rounded-2xl"
-                        style={{ backgroundColor: 'black' }}
-                    />
-                </motion.li>
+                  {link.name}
+                </Link>
+                <motion.span
+                  variants={variants}
+                  className="absolute block left-0 -bottom-1 w-1/2 h-[2px] bg-secondary rounded-2xl"
+                  style={{ backgroundColor: 'black' }}
+                />
+              </motion.li>
             );
           })}
         </ul>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
+import { Link } from './Link.tsx';
 import { ArrowRight } from "./icons/arr-right";
 import { ArrowLeft } from "./icons/arr-left";
 
@@ -53,14 +54,10 @@ function ProjectsCarousel() {
                     Projects<span className="text-accent">.</span>
                 </h2>
 
-                <a
-                    href="/projects"
-                    className="px-4 py-1.5 rounded-2xl border-2 border-gray-light text-secondary 
-                            hover:border-accent focus-visible:border-accent flex items-center gap-2 pr-2.5"
-                >
+                <Link className="max-w-fit" intent="secondary" extras="icon" href="/projects">
                     Explore more lame projects
                     <ArrowRight className="ml-1.5" width={20} height={20} />
-                </a>
+                </Link>
             </header>
         
             <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth">
@@ -85,14 +82,15 @@ function ProjectsCarousel() {
                         <hr className="border-gray-light border w-full my-10" />
 
                         <div className="flex gap-3 items-center justify-between">
-                            <a 
+                            <Link
                                 href={`/projects/${project.slug}`}
-                                className="px-4 py-1.5 rounded-2xl border-2 border-gray-light text-secondary 
-                                        hover:border-accent focus-visible:border-accent flex items-center gap-2 pr-2.5"
+                                className="max-w-fit"
+                                extras="icon"
+                                intent="secondary"
                             >
                                 View full project
                                 <ArrowRight width={20} height={20} />
-                            </a>
+                            </Link>
 
                             <div className="flex gap-x-1">
                             <Button
