@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { X } from "@phosphor-icons/react";
+import { X } from "@phosphor-icons/react/dist/csr/X";
 import { GithubLogo } from "./icons/github-logo";
 import { LinkedinLogo } from "./icons/linkedin-logo";
 import { Link } from "./Link.tsx";
@@ -50,7 +50,7 @@ export function FullScreenNav(props: FullScreenNavProps) {
                 <Link 
                   href={link.pathname}
                   className="text-4xl sm:text-5xl md:text-6xl font-bold hover:text-accent transition"
-                  onClick={(e) => {
+                  onClick={() => {
                     props.onClose();
                   }}
                   override={true}
@@ -78,7 +78,7 @@ export function FullScreenNav(props: FullScreenNavProps) {
               <Link
                 href={link.url}
                 aria-label={link.name}
-                onClick={(e) => {
+                onClick={() => {
                   props.onClose();
                 }}
                 override={true}

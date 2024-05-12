@@ -60,7 +60,7 @@ export function Header() {
                 <Link
                   className={classNames("relative block", isRouteActive && "font-semibold")} 
                   href={link.pathname}
-                  onClick={(e) => {
+                  onClick={() => {
                     window.history.pushState({}, '', link.pathname);
                     setCurrentPath(link.pathname);
                   }}
