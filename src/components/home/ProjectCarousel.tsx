@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button } from './Button';
-import { Link } from './Link.tsx';
-import { ArrowRight } from "./icons/arr-right";
-import { ArrowLeft } from "./icons/arr-left";
+import { Button } from '../Button.tsx';
+import { Link } from '../Link.tsx';
+import { ArrowRight } from "../icons/arr-right.tsx";
+import { ArrowLeft } from "../icons/arr-left.tsx";
 
 const projectData = [
     {
