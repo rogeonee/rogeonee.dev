@@ -1,0 +1,42 @@
+---
+const experiences = [
+  {
+    name: "LoseTheLeftovers",
+    position: "Frontend Developer",
+    timePeriod: "Sep 2023 - Apr 2024"
+  },
+  {
+    name: "Okanagan Tech Industry Night",
+    position: "Web Developer",
+    timePeriod: "Feb 2024 - Feb 2024"
+  },
+  {
+    name: "DNS",
+    position: "Intern Backend Developer",
+    timePeriod: "May 2021 - Aug 2021"
+  }
+];
+---
+
+<section class="mx-auto max-w-6xl w-full pb-32 px-5 md:px-0">
+    <header>
+        <h2 class="text-3xl md:text-4xl font-semibold">Work Experience<span class="text-accent">.</span></h2>
+    </header>
+
+    <ul class="flex flex-col mt-5">
+        {experiences.map((exp, index) => (
+            <li class="mt-5">
+                <div class="group flex flex-col sm:flex-row justify-between w-full">
+                    <h3 class="text-lg font-semibold group-hover:underline">
+                        {exp.name}
+                    </h3>
+
+                    <div class="flex flex-col sm:flex-row sm:gap-4 justify-between w-full sm:max-w-fit">
+                        <h4 class="text-gray-dark text-medium mt-1 min-w-fit">{exp.position}</h4>
+                        <h5 class="text-gray-light mt-1 min-w-fit">{exp.timePeriod}</h5>
+                    </div>
+                </div>
+            </li>
+        ))}
+    </ul>
+</section>

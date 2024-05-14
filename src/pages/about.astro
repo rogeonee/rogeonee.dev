@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/about/Hero.astro";
+import Experience from "../components/about/Experience.astro";
 ---
 
 <BaseLayout pageTitle="About">
-	<h2>Bbbb</h2>
+	<main class="mt-[clamp(64px,10%,192px)]">
+		<Hero />
+		<Experience />
+	</main>
+
 </BaseLayout>

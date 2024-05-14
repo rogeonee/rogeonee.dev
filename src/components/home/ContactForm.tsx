@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Warning } from "@phosphor-icons/react/dist/csr/Warning";
-import { Button } from './Button';
+import { Button } from '../Button';
 
 const CONTACT_SCHEMA = z.object({
     firstName: z.string().min(1, 'Please enter your first name'),
