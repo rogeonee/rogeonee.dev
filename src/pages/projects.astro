@@ -2,36 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Link } from "../components/Link.tsx";
 import { ArrowRight } from "../components/icons/arr-right.tsx";
+import { getCollection } from "astro:content";
 
-const projectData = [
-    {
-        id: 1,
-        title: "Project 1",
-        description: "Description of Project 1",
-        coverImage: {
-            src: "/projects/flop1.jpg",
-        },
-        slug: "project-1"
-    },
-    {
-        id: 2,
-        title: "Project 2",
-        description: "Description of Project 2",
-        coverImage: {
-            src: "/projects/flop2.jpg",
-        },
-        slug: "project-2"
-    },
-    {
-        id: 3,
-        title: "Project 3",
-        description: "Description of Project 3",
-        coverImage: {
-            src: "/projects/flop3.jpg",
-        },
-        slug: "project-3"
-    },
-];
+const projects = await getCollection('projects');
 ---
 
 <BaseLayout pageTitle="Projects">
@@ -49,39 +22,39 @@ const projectData = [
 		</p>
 
 		<ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-			{projectData.map((project) => {
+			{projects.map((project) => {
 				return (
 					<li class="p-4 rounded-lg bg-white/10 ring-2 ring-accent hover:ring-offset-2 transition group">
-						<a href="/project[id]" rel="noreferrer" target="_blank">
+						<a href={`/projects/${project.slug}`} rel="noreferrer" target="_blank">
 							<figure class="mb-5">
 								<img
 									width={400}
 									height={250}
-									alt={project.title}
+									alt={project.data.title}
 									draggable={false}
 									class="rounded shadow-md w-full md:h-80 object-cover"
-									src={project.coverImage.src}
+									src={project.data.coverImage}
 								/>
 							</figure>
 
 							<header class="flex items-baseline justify-between mb-6">
 								<h3 class="font-semibold font-poppins text-xl transition-colors border-accent/10 group-hover:border-b-accent border-b-2 max-w-fit">
-									{project.title}
+									{project.data.title}
 								</h3>
 
 								<Link
-									href="/project[id]"
+									href={`/projects/${project.slug}`}
 									className="scale-75 group-hover:scale-100 group-hover:-rotate-45 group-hover:border-accent"
 									intent="secondary"
 									size="square"
-									aria-label={`Link to ${project.title}`}
+									aria-label={`Link to ${project.data.title}`}
 								>
 									<ArrowRight />
 								</Link>
 							</header>
 
 							<p class="text-base text-gray-dark max-w-xl font-inter font-normal">
-								{project.description}
+								{project.data.description}
 							</p>
 						</a>
 					</li>
