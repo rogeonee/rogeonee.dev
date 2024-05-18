@@ -35,6 +35,10 @@ const variants: Variants = {
 };
 
 export function FullScreenNav(props: FullScreenNavProps) {
+  if (!props.isOpen) {
+    return null;
+  }
+  
   return (
     <motion.div
       initial="closed"
