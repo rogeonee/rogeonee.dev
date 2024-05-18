@@ -3,49 +3,22 @@ import { Button } from '../Button.tsx';
 import { Link } from '../Link.tsx';
 import { ArrowRight } from "../icons/arr-right.tsx";
 import { ArrowLeft } from "../icons/arr-left.tsx";
+import { getCollection } from "astro:content";
 
-const projectData = [
-    {
-        id: 1,
-        title: "Project 1",
-        description: "Description of Project 1",
-        coverImage: {
-            src: "/projects/flop1.jpg",
-        },
-        slug: "project-1"
-    },
-    {
-        id: 2,
-        title: "Project 2",
-        description: "Description of Project 2",
-        coverImage: {
-            src: "/projects/flop2.jpg",
-        },
-        slug: "project-2"
-    },
-    {
-        id: 3,
-        title: "Project 3",
-        description: "Description of Project 3",
-        coverImage: {
-            src: "/projects/flop3.jpg",
-        },
-        slug: "project-3"
-    },
-];
+const projects = await getCollection('projects');
 
 function ProjectsCarousel() {
     const [current, setCurrent] = useState(0);
 
     const nextProject = () => {
-        setCurrent((current + 1) % projectData.length); // Loop back to the first project
+        setCurrent((current + 1) % projects.length); // Loop back to the first project
     };
 
     const prevProject = () => {
-        setCurrent((current - 1 + projectData.length) % projectData.length); // Loop to the last project
+        setCurrent((current - 1 + projects.length) % projects.length); // Loop to the last project
     };
 
-    const project = projectData[current];
+    const project = projects[current];
 
     return (
         <section className="mx-auto max-w-6xl w-full py-32 px-5 md:px-0 overflow-x-hidden">
@@ -65,19 +38,19 @@ function ProjectsCarousel() {
                     <img
                         width={500}
                         height={350}
-                        alt={project.title}
+                        alt={project.data.title}
                         draggable={false}
                         className="rounded-2xl shadow-md w-full md:max-w-[50%] md:h-80 object-cover"
-                        src={project.coverImage.src}
+                        src={project.data.coverImage}
                     />
 
                     <div className="flex flex-col w-full text-left">
                         <header className="flex flex-col-reverse">
-                            <h3 className="font-bold font-poppins text-4xl">{project.title}</h3>
+                            <h3 className="font-bold font-poppins text-4xl">{project.data.title}</h3>
                             <h4 className="font-semibold text-2xl">0{current + 1} —</h4>
                         </header>
 
-                        <p className="mt-5 text-lg text-gray-light h-[150px]">{project.description}</p>
+                        <p className="mt-5 text-lg text-gray-light h-[150px]">{project.data.description}</p>
 
                         <hr className="border-gray-light border w-full my-10" />
 

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import ProjHeader from "../components/projects/ProjHeader.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <ProjHeader 
+        title={frontmatter.title}
+        description={frontmatter.description}
+        projURL={frontmatter.projectURL}
+        gitURL={frontmatter.gitURL}
+        date={frontmatter.date}
+    />
+
+    <section class="prose mx-auto max-w-3xl">
+        <slot />
+    </section>
+</BaseLayout>
