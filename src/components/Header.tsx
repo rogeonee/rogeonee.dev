@@ -61,8 +61,10 @@ export function Header() {
                   className={classNames("relative block", isRouteActive && "font-semibold")} 
                   href={link.pathname}
                   onClick={() => {
-                    window.history.pushState({}, '', link.pathname);
-                    setCurrentPath(link.pathname);
+                    if (window.location.pathname !== link.pathname) {
+                      window.history.pushState({}, '', link.pathname);
+                      window.dispatchEvent(new Event('popstate'));
+                    }
                   }}
                   override={true}
                 >
