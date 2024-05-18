@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 export const prerender = true;
 
 export async function getStaticPaths() {
-    // Define the colection you are creating pages for
     const allProjects = await getCollection("projects");
 
     return allProjects.map((project) => {
