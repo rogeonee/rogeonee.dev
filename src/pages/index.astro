@@ -4,11 +4,15 @@ import Hero from "../components/home/Hero.astro";
 import Skills from "../components/home/Skills.astro";
 import ProjectCarousel from "../components/home/ProjectCarousel.tsx";
 import Contact from "../components/home/Contact.astro";
+import Experience from "../components/about/Experience.astro";
+import About from "../components/about/About.astro";
 ---
 
 <BaseLayout pageTitle="Egor Bezriadin">
-	<Hero />
-	<Skills />
-	<ProjectCarousel client:idle />
-	<Contact />
+  <Hero />
+  <Skills />
+  <Experience />
+  <About />
+  <ProjectCarousel client:idle />
+  <Contact />
 </BaseLayout>

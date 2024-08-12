@@ -1,35 +1,42 @@
 ---
-import { Link } from "./Link.tsx"
+import { Link } from "./Link.tsx";
 ---
 
-<footer class="flex flex-col sm:flex-row items-center justify-between w-full sm:h-40 px-5 pb-10 sm:pb-5 pt-8">
-    <div class="text-center sm:text-left mb-5 sm:mb-0 font-poppins text-gray-dark font-medium w-full sm:w-auto">
-        <p>Created by Egor 🫠</p>
-        <p>Built with 
-            <Link 
-                href="https://astro.build"
-                override={true}
-                className="underline text-gray-dark hover:text-black transition-colors"
-            >
-                Astro
-            </Link>
-        </p>
+<footer class="w-full px-5 sm:px-0 pt-8 pb-10 sm:pb-5">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between">
+    <div
+      class="text-center sm:text-left mb-5 sm:mb-0 font-poppins text-gray-dark font-medium w-full sm:w-auto"
+    >
+      <p>Created by Egor 🐦‍⬛</p>
+      <p>
+        Built with
+        <Link
+          href="https://astro.build"
+          override={true}
+          className="underline text-gray-dark hover:text-black transition-colors"
+        >
+          Astro 🚀
+        </Link>
+      </p>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-2 mt-5 sm:mt-0 w-full sm:w-auto justify-center sm:justify-end">
-        <Link 
-            href="https://github.com/rogeonee"
-            override={true}
-            className="underline text-gray-dark hover:text-black transition-colors"
-        >
-            GitHub
-        </Link>
-        <Link 
-            href="https://linkedin.com/in/egor-bezriadin/"
-            override={true}
-            className="underline text-gray-dark hover:text-black transition-colors"
-        >
-            LinkedIn
-        </Link>
+    <div
+      class="flex flex-col sm:flex-row gap-2 mt-5 sm:mt-0 w-full sm:w-auto justify-center sm:justify-end"
+    >
+      <Link
+        href="https://github.com/rogeonee"
+        override={true}
+        className="underline text-gray-dark hover:text-black transition-colors"
+      >
+        GitHub
+      </Link>
+      <Link
+        href="https://linkedin.com/in/egor-bezriadin/"
+        override={true}
+        className="underline text-gray-dark hover:text-black transition-colors"
+      >
+        LinkedIn
+      </Link>
     </div>
+  </div>
 </footer>
