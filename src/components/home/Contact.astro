@@ -3,62 +3,66 @@ import { ContactForm } from "./ContactForm.tsx";
 import { Link } from "../Link.tsx";
 import { ArrowUpRight } from "../icons/arr-right-up.tsx";
 const socialLinks = [
-    { name: "GitHub", url: "https://github.com/rogeonee" },
-    { name: "LinkedIn", url: "https://linkedin.com/in/egor-bezriadin/" },
+  { name: "GitHub", url: "https://github.com/rogeonee" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/egor-bezriadin/" },
 ];
 ---
 
 <section id="contact" class="bg-secondary text-primary">
-    <div class="mx-auto max-w-6xl w-full py-32 px-5 md:px-0">
-        <h2 class="font-poppins font-medium text-4xl md:text-5xl relative max-w-fit leading-snug">
-            Have questions?
-            <br />
-            Ask<span class="text-accent">.</span>
-        </h2>
+  <div class="mx-auto max-w-6xl w-full py-32 px-5 md:px-0">
+    <h2 class="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+      Let's connect<span class="text-accent">.</span>
+    </h2>
 
-        <div class="flex flex-col md:flex-row mt-14 gap-12 justify-between">
-            <div class="w-full md:max-w-md">
-                <p class="text-gray-extralight font-medium text-inter">
-                    Some paragraph telling how I like connect with new people and don't hesitate 
-                    to reach out bla bla bla...
-                </p>
+    <div class="flex flex-col md:flex-row mt-14 gap-12">
+      <div class="w-full md:max-w-md">
+        <p class="font-poppins font-medium text-lg text-inter">
+          I'm always open to collaborating on new projects or helping with website redesigns. If you
+          need any help within my expertise, I'm here for you. You can reach out to me through email
+          or connect with me on LinkedIn to discuss what's on your mind.
+        </p>
+        <p class="font-poppins font-medium text-lg text-inter mt-4">
+          🐦‍⬛ Let's build something awesome together!
+        </p>
+      </div>
 
-                <div class="flex mt-14 gap-12 w-full">
-                    <ul class="flex flex-col gap-y-2">
-                        {socialLinks.map((link) => (
-                            <li class="group">
-                                <Link
-                                    href={link.url}
-                                    override={true}
-                                    className="flex items-center gap-1 text-gray-extralight hover:text-primary"
-                                >
-                                    {link.name}
-                                    <ArrowUpRight
-                                        className="group-hover:scale-110 origin-bottom-left transition"
-                                        width={12}
-                                        height={12}
-                                    />
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+      <div class="w-full md:w-auto md:ml-auto text-center md:text-right">
+        <div class="flex flex-col gap-8 items-center md:items-end">
+          <ul class="flex flex-col gap-y-4">
+            {
+              socialLinks.map((link) => (
+                <li class="group">
+                  <Link
+                    href={link.url}
+                    override={true}
+                    className="flex items-center gap-2 text-gray-extralight hover:text-primary font-medium text-lg"
+                  >
+                    {link.name}
+                    <ArrowUpRight
+                      className="group-hover:scale-110 origin-bottom-left transition"
+                      width={16}
+                      height={16}
+                    />
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
 
-                    <div class="w-1/2">
-                        <p class="uppercase text-sm font-semibold mb-1 text-gray-extralight font-poppins">
-                            email me directly
-                        </p>
-                        <Link
-                            href="mailto:egor.bezriadin.01@gmail.com"
-                            className="text-primary"
-                            override={true}
-                        >
-                            egor.bezriadin.01@gmail.com
-                        </Link>
-                    </div>
-                </div>
-            </div>
-
-            <ContactForm client:idle />
+          <div class="w-full sm:w-auto">
+            <p class="uppercase text-lg font-semibold mb-2 text-gray-extralight font-poppins">
+              email me directly
+            </p>
+            <Link
+              href="mailto:egor.bezriadin.01@gmail.com"
+              className="text-primary font-medium text-lg"
+              override={true}
+            >
+              egor.bezriadin.01@gmail.com
+            </Link>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
