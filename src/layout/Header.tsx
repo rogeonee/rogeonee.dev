@@ -37,7 +37,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="w-full py-7 px-5 md:px-0 sticky top-0 bg-primary z-50">
+    <header className="w-full py-7 px-5 md:px-0 sticky top-0 bg-primary z-50 border-b-[1px] border-gray-400">
       <nav className="w-full mx-auto flex items-center justify-between font-poppins max-w-6xl">
         <ul className="flex items-center gap-5">
           {navLinks.map((link) => {
