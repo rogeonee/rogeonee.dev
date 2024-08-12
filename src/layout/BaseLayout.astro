@@ -3,7 +3,20 @@ import { ViewTransitions } from "astro:transitions";
 import { Header } from "./Header.tsx";
 import Footer from "./Footer.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props;
+import { SEO } from "astro-seo";
+
+const title = "Egor Bezriadin - Software Developer";
+const description =
+  "An aspiring web and mobile developer proficient in React.js, React Native, TypeScript, JavaScript, and other frontend focused tools and frameworks.";
+const keywords = [
+  "egor bezriadin",
+  "rogeonee",
+  "roge_one_",
+  "canada",
+  "web developer",
+  "mobile developer",
+  "virtulynx",
+].join(", ");
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -12,8 +25,42 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
     <ViewTransitions />
+    <SEO
+      title={title}
+      description={description}
+      canonical="https://rogeonee-dev.vercel.app/"
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image: "https://rogeonee-dev.vercel.app/og-image.png",
+          url: "https://rogeonee-dev.vercel.app/",
+        },
+        optional: {
+          description: description,
+          locale: "en-US",
+          siteName: "rogeonee.dev",
+        },
+      }}
+      ,
+      twitter={{
+        card: "summary_large_image",
+        creator: "@roge_one_",
+        title: title,
+        description: description,
+        image: "https://rogeonee-dev.vercel.app/og-image.png",
+      }}
+      ,
+      extend={{
+        meta: [
+          {
+            name: "keywords",
+            content: keywords,
+          },
+        ],
+      }}
+    />
   </head>
 
   <body>
