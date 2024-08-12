@@ -1,21 +1,19 @@
 import { useState } from "react";
-import { Button } from "../Button.tsx";
-import { Link } from "../Link.tsx";
+import { Button } from "../ui/Button.tsx";
+import { Link } from "../ui/Link.tsx";
 import { ArrowRight } from "../icons/arr-right.tsx";
 import { ArrowLeft } from "../icons/arr-left.tsx";
-import { getCollection } from "astro:content";
-
-const projects = await getCollection("projects");
+import { projects } from "../../content/projects.ts";
 
 function ProjectsCarousel() {
   const [current, setCurrent] = useState(0);
 
   const nextProject = () => {
-    setCurrent((current + 1) % projects.length); // Loop back to the first project
+    setCurrent((current + 1) % projects.length);
   };
 
   const prevProject = () => {
-    setCurrent((current - 1 + projects.length) % projects.length); // Loop to the last project
+    setCurrent((current - 1 + projects.length) % projects.length);
   };
 
   const project = projects[current];
@@ -29,8 +27,12 @@ function ProjectsCarousel() {
         <h2 className="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
           Projects<span className="text-accent">.</span>
         </h2>
-
-        <Link className="max-w-fit" intent="secondary" extras="icon" href="/projects">
+        <Link
+          className="max-w-fit"
+          intent="secondary"
+          extras="icon"
+          href="https://github.com/rogeonee"
+        >
           See more projects
           <ArrowRight className="ml-1.5" width={20} height={20} />
         </Link>
@@ -41,31 +43,26 @@ function ProjectsCarousel() {
           <img
             width={500}
             height={350}
-            alt={project.data.title}
+            alt={project.title}
             draggable={false}
             className="rounded-2xl shadow-md w-full md:max-w-[50%] md:h-80 object-cover"
-            src={project.data.coverImage}
+            src={project.coverImage}
           />
 
           <div className="flex flex-col w-full text-left">
             <header className="flex flex-col-reverse">
-              <h3 className="font-bold font-poppins text-4xl">{project.data.title}</h3>
+              <h3 className="font-bold font-poppins text-4xl">{project.title}</h3>
               <h4 className="font-semibold text-2xl">0{current + 1} —</h4>
             </header>
 
-            <p className="mt-5 text-lg text-gray-light h-[80px] md:h-[140px]">
-              {project.data.description}
+            <p className="mt-5 text-lg text-gray-light h-full md:h-[140px]">
+              {project.description}
             </p>
 
             <hr className="border-gray-light border w-full my-10" />
 
             <div className="flex gap-3 items-center justify-between">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="max-w-fit"
-                extras="icon"
-                intent="secondary"
-              >
+              <Link href={project.link} className="max-w-fit" extras="icon" intent="secondary">
                 View full project
                 <ArrowRight width={20} height={20} />
               </Link>

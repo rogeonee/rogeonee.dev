@@ -1,15 +1,12 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import { Header } from "../components/Header.tsx";
-import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+import { Header } from "./Header.tsx";
+import Footer from "./Footer.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
 
-<html 
-  lang="en"
-  class="scroll-smooth"
->
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -1,15 +1,9 @@
 import { motion, type Variants } from "framer-motion";
 import { X } from "@phosphor-icons/react/dist/csr/X";
-import { GithubLogo } from "./icons/github-logo";
-import { LinkedinLogo } from "./icons/linkedin-logo";
-import { Link } from "./Link.tsx";
-
-const navLinks = [
-  { name: "Home", pathname: "/" },
-  { name: "About", pathname: "/#about" },
-  { name: "Projects", pathname: "/#projects" },
-  { name: "Contact", pathname: "/#contact" },
-];
+import { GithubLogo } from "../components/icons/github-logo.tsx";
+import { LinkedinLogo } from "../components/icons/linkedin-logo.tsx";
+import { Link } from "../components/ui/Link.tsx";
+import { navLinks } from "../content/navlinks.ts";
 
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/rogeonee", icon: GithubLogo },
