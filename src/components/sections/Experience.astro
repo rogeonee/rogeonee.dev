@@ -1,0 +1,37 @@
+---
+import { Link } from "../ui/Link";
+import { experiences } from "../../content/experiences";
+---
+
+<section>
+  <div class="mx-auto max-w-6xl w-full py-40 px-5 md:px-0">
+    <h2 class="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+      Work Experience<span class="text-accent">.</span>
+    </h2>
+
+    <ul class="flex flex-col mt-5">
+      {
+        experiences.map((exp) => (
+          <li class="mt-5">
+            <Link href={exp.link} override={true}>
+              <div class="group flex flex-col sm:flex-row justify-between w-full">
+                <h3 class="font-poppins font-medium text-lg sm:text-xl font-semibold group-hover:underline">
+                  {exp.company}
+                </h3>
+
+                <div class="flex flex-col sm:flex-row sm:gap-4 justify-between w-full sm:max-w-fit">
+                  <h4 class="font-poppins font-medium text-lg sm:text-xl text-gray-dark mt-1 min-w-fit">
+                    {exp.position}
+                  </h4>
+                  <h5 class="font-poppins font-medium text-lg sm:text-xl text-gray-light mt-1 min-w-fit">
+                    {exp.timePeriod}
+                  </h5>
+                </div>
+              </div>
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

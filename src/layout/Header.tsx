@@ -1,29 +1,23 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
+import classNames from "classnames";
 import { motion, type Variants } from "framer-motion";
-import { FullScreenNav } from './FullScreenNav';
-import { Link } from './Link.tsx';
-
-const navLinks = [
-  { name: "Home", pathname: "/" },
-  { name: "About", pathname: "/about" },
-  { name: "Contact", pathname: "/#contact" },
-  { name: "Projects", pathname: "/projects" },
-];
+import { FullScreenNav } from "./FullScreenNav.tsx";
+import { Link } from "../components/ui/Link.tsx";
+import { navLinks } from "../content/navlinks.ts";
 
 const variants: Variants = {
-    initial: {
-      opacity: 0,
-      width: 0,
-    },
-    hover: {
-      opacity: 0.5,
-      width: "60%",
-    },
-    active: {
-      opacity: 1,
-      width: "50%",
-    },
+  initial: {
+    opacity: 0,
+    width: 0,
+  },
+  hover: {
+    opacity: 0.5,
+    width: "60%",
+  },
+  active: {
+    opacity: 1,
+    width: "50%",
+  },
 };
 
 export function Header() {
@@ -38,12 +32,12 @@ export function Header() {
     };
 
     // Listen for changes in history to update pathname
-    window.addEventListener('popstate', handleLocationChange);
-    return () => window.removeEventListener('popstate', handleLocationChange);
+    window.addEventListener("popstate", handleLocationChange);
+    return () => window.removeEventListener("popstate", handleLocationChange);
   }, []);
 
   return (
-    <header className="w-full py-7 px-5 md:px-0 sticky top-0 bg-primary z-50">
+    <header className="w-full py-7 px-5 md:px-0 sticky top-0 bg-primary z-50 border-b-[1px] border-gray-400">
       <nav className="w-full mx-auto flex items-center justify-between font-poppins max-w-6xl">
         <ul className="flex items-center gap-5">
           {navLinks.map((link) => {
@@ -55,15 +49,15 @@ export function Header() {
                 whileHover="hover"
                 animate={isRouteActive ? "active" : "initial"}
                 key={link.pathname}
-                style={{ position: 'relative' }}
+                style={{ position: "relative" }}
               >
                 <Link
-                  className={classNames("relative block", isRouteActive && "font-semibold")} 
+                  className={classNames("relative block", isRouteActive && "font-semibold")}
                   href={link.pathname}
                   onClick={() => {
                     if (window.location.pathname !== link.pathname) {
-                      window.history.pushState({}, '', link.pathname);
-                      window.dispatchEvent(new Event('popstate'));
+                      window.history.pushState({}, "", link.pathname);
+                      window.dispatchEvent(new Event("popstate"));
                     }
                   }}
                   override={true}
@@ -73,7 +67,7 @@ export function Header() {
                 <motion.span
                   variants={variants}
                   className="absolute block left-0 -bottom-1 w-1/2 h-[2px] bg-secondary rounded-2xl"
-                  style={{ backgroundColor: 'black' }}
+                  style={{ backgroundColor: "black" }}
                 />
               </motion.li>
             );
@@ -85,9 +79,18 @@ export function Header() {
           onClick={() => setIsMenuOpen(true)}
           className="flex flex-col items-end gap-y-1.5 w-8 md:w-10 hover:gap-y-2 transition-all ease-in-out duration-100 group"
         >
-          <span className="h-0.5 bg-secondary group-hover:bg-accent w-full" style={{ backgroundColor: 'black' }}/>
-          <span className="h-0.5 bg-secondary group-hover:bg-accent w-2/3" style={{ backgroundColor: 'black' }}/>
-          <span className="h-0.5 bg-secondary group-hover:bg-accent w-full" style={{ backgroundColor: 'black' }}/>
+          <span
+            className="h-0.5 bg-secondary group-hover:bg-accent w-full"
+            style={{ backgroundColor: "black" }}
+          />
+          <span
+            className="h-0.5 bg-secondary group-hover:bg-accent w-2/3"
+            style={{ backgroundColor: "black" }}
+          />
+          <span
+            className="h-0.5 bg-secondary group-hover:bg-accent w-full"
+            style={{ backgroundColor: "black" }}
+          />
         </button>
       </nav>
 

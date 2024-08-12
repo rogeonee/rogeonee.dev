@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rogeonee-dev.vercel.app/
+
+# Sitemaps
+Sitemap: https://rogeonee-dev.vercel.app/sitemap.xml

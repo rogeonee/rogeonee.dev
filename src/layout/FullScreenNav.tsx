@@ -1,15 +1,9 @@
 import { motion, type Variants } from "framer-motion";
 import { X } from "@phosphor-icons/react/dist/csr/X";
-import { GithubLogo } from "./icons/github-logo";
-import { LinkedinLogo } from "./icons/linkedin-logo";
-import { Link } from "./Link.tsx";
-
-const navLinks = [
-  { name: "Home", pathname: "/" },
-  { name: "About", pathname: "/about" },
-  { name: "Contact", pathname: "/#contact" },
-  { name: "Projects", pathname: "/projects" },
-];
+import { GithubLogo } from "../components/icons/github-logo.tsx";
+import { LinkedinLogo } from "../components/icons/linkedin-logo.tsx";
+import { Link } from "../components/ui/Link.tsx";
+import { navLinks } from "../content/navlinks.ts";
 
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/rogeonee", icon: GithubLogo },
@@ -38,20 +32,20 @@ export function FullScreenNav(props: FullScreenNavProps) {
   if (!props.isOpen) {
     return null;
   }
-  
+
   return (
     <motion.div
       initial="closed"
       animate={props.isOpen ? "open" : "closed"}
       variants={variants}
-      className="bg-secondary text-primary fixed top-0 left-0 w-screen min-h-screen py-10 md:py-32 overflow-auto"
+      className="bg-secondary text-primary fixed top-0 left-0 w-screen min-h-screen py-16 md:py-32 overflow-auto"
     >
       <div className="mx-auto max-w-6xl px-5 md:px-0">
         <div className="flex flex-row justify-between">
           <ul className="flex flex-col gap-y-8">
             {navLinks.map((link) => (
               <li key={link.pathname}>
-                <Link 
+                <Link
                   href={link.pathname}
                   className="text-4xl sm:text-5xl md:text-6xl font-bold hover:text-accent transition"
                   onClick={() => {
