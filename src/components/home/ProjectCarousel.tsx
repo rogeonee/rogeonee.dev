@@ -21,14 +21,17 @@ function ProjectsCarousel() {
   const project = projects[current];
 
   return (
-    <section className="mx-auto max-w-6xl w-full py-32 px-5 md:px-0 overflow-x-hidden">
+    <section
+      id="projects"
+      className="mx-auto max-w-6xl w-full py-32 px-5 md:px-0 overflow-x-hidden"
+    >
       <header className="flex flex-col gap-y-5 sm:flex-row sm:items-center justify-between">
         <h2 className="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
           Projects<span className="text-accent">.</span>
         </h2>
 
         <Link className="max-w-fit" intent="secondary" extras="icon" href="/projects">
-          Explore more lame projects
+          See more projects
           <ArrowRight className="ml-1.5" width={20} height={20} />
         </Link>
       </header>
@@ -50,7 +53,9 @@ function ProjectsCarousel() {
               <h4 className="font-semibold text-2xl">0{current + 1} —</h4>
             </header>
 
-            <p className="mt-5 text-lg text-gray-light h-[150px]">{project.data.description}</p>
+            <p className="mt-5 text-lg text-gray-light h-[80px] md:h-[140px]">
+              {project.data.description}
+            </p>
 
             <hr className="border-gray-light border w-full my-10" />
 

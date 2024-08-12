@@ -7,8 +7,8 @@ import { Link } from "./Link.tsx";
 const navLinks = [
   { name: "Home", pathname: "/" },
   { name: "About", pathname: "/#about" },
+  { name: "Projects", pathname: "/#projects" },
   { name: "Contact", pathname: "/#contact" },
-  { name: "Projects", pathname: "/projects" },
 ];
 
 const variants: Variants = {
