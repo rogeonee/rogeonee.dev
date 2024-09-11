@@ -2,7 +2,7 @@ export const experiences = [
   {
     company: "Virtulynx Inc.",
     position: "Full-stack Web Developer",
-    timePeriod: "May 2024 - Present",
+    timePeriod: "May 2024 - Sep 2024",
     link: "https://www.virtulynx.ca/",
   },
   {
