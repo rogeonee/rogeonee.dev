@@ -1,5 +1,11 @@
 export const experiences = [
   {
+    company: "KinCapsule",
+    position: "Frontend Software Developer",
+    timePeriod: "Sep 2024 - Present",
+    link: "https://www.kincapsule.com/",
+  },
+  {
     company: "Virtulynx Inc.",
     position: "Full-stack Web Developer",
     timePeriod: "May 2024 - Sep 2024",
