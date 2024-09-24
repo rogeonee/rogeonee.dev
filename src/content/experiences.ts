@@ -1,7 +1,13 @@
 export const experiences = [
   {
+    company: "University of British Columbia",
+    position: "Web Developer / Research Assistant",
+    timePeriod: "Sep 2024 - Present",
+    link: "https://healthenow.com/",
+  },
+  {
     company: "KinCapsule",
-    position: "Frontend Software Developer",
+    position: "Frontend Software Engineer",
     timePeriod: "Sep 2024 - Present",
     link: "https://www.kincapsule.com/",
   },
@@ -14,7 +20,7 @@ export const experiences = [
   {
     company: "Stampix",
     position: "Student Mobile Software Engineer",
-    timePeriod: "May 2024 - Jul 2024",
+    timePeriod: "Jun 2024 - Jul 2024",
     link: "https://stampix.com/",
   },
   {
