@@ -1,24 +1,24 @@
 export const projects = [
   {
-    title: "Konvert - Image Format Conversion Website",
+    title: "Konvert",
     coverImage: "/projects/konvert.png",
     description:
-      "A minimalistic website for converting image formats with a focus on simplicity and functionality. Built with Next.js, TypeScript, and shadcn components. Heavily inspired by Vercel's design code, still a work in progress.",
+      "A minimalistic website for converting HEIC images to JPG/PNG with a focus on simplicity and functionality. Built with Next.js, TypeScript, and shadcn components. Heavily inspired by Vercel's design code, still a work in progress.",
     link: "https://konvert-sigma.vercel.app/",
   },
   {
-    title: "Virtulynx - Website and Facebook Marketplace Platform",
+    title: "Virtulynx",
     coverImage: "/projects/virtulynx.png",
     description:
-      "Built a corporate website with Next.js and TypeScript, and Facebook Marketplace platform integration for business owners. Unfortunately, will never face production due to Meta restrictions and disagreement amongst team members.",
+      "A Facebook Marketplace Platform, built with Next.js, Node.js, and TypeScript all over. Unfortunately, will never face production due to Meta restrictions and disagreement amongst team members.",
     link: "https://www.virtulynx.ca/",
   },
   {
-    title: "rogeonee.dev - Personal Website",
+    title: "Personal (this) Website",
     coverImage: "/og-image.png",
     description:
       "Developed (this) personal portfolio website with Astro.js, TypeScript, and Tailwind CSS to showcase professional experience and projects.",
-    link: "https://rogeonee-dev.vercel.app/",
+    link: "https://www.rogeonee.com/",
   },
   {
     title: "Stampix AI Field Test App",

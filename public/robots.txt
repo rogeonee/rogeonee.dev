@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://rogeonee-dev.vercel.app/
+Host: https://www.rogeonee.com/
 
 # Sitemaps
-Sitemap: https://rogeonee-dev.vercel.app/sitemap.xml
+Sitemap: https://www.rogeonee.com/sitemap.xml

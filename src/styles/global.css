@@ -1,6 +1,5 @@
 @import "@fontsource/inter";
 @import "@fontsource/poppins";
-@import "@fontsource/fira-code";
 
 @tailwind base;
 @tailwind components;
@@ -29,8 +28,6 @@
 }
 
 :root {
-  --font-inter: 'Inter', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-fira-code: 'Fira Code', monospace;
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }
-  
