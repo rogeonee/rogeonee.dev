@@ -47,6 +47,7 @@ function ProjectsCarousel() {
             draggable={false}
             className="rounded-2xl shadow-md w-full md:max-w-[50%] md:h-80 object-cover"
             src={project.coverImage}
+            loading="lazy"
           />
 
           <div className="flex flex-col w-full text-left">
