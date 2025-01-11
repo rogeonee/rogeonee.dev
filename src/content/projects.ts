@@ -4,7 +4,7 @@ export const projects = [
     coverImage: "/projects/konvert.webp",
     description:
       "A minimalistic website for converting HEIC images to JPG/PNG with a focus on simplicity and functionality. Built with Next.js, TypeScript, and shadcn components. Heavily inspired by Vercel's design code, still a work in progress.",
-    link: "https://konvert-sigma.vercel.app/",
+    link: "https://www.knvrt.one/",
   },
   {
     title: "Virtulynx",
