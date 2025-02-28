@@ -1,0 +1,51 @@
+Directory structure:
+└── rogeonee-rogeonee.dev/
+    ├── README.md
+    ├── astro.config.mjs
+    ├── package.json
+    ├── tailwind.config.mjs
+    ├── tsconfig.json
+    ├── .prettierignore
+    ├── .prettierrc
+    ├── public/
+    │   ├── robots.txt
+    │   ├── sitemap.xml
+    │   └── projects/
+    │       ├── konvert.webp
+    │       ├── leftovers.webp
+    │       ├── okgn.webp
+    │       ├── stampix.webp
+    │       └── virtulynx.webp
+    └── src/
+        ├── env.d.ts
+        ├── components/
+        │   ├── icons/
+        │   │   ├── arr-left.tsx
+        │   │   ├── arr-right-up.tsx
+        │   │   ├── arr-right.tsx
+        │   │   ├── github-logo.tsx
+        │   │   ├── linkedin-logo.tsx
+        │   │   └── twitter-logo.tsx
+        │   ├── sections/
+        │   │   ├── About.astro
+        │   │   ├── Contact.astro
+        │   │   ├── Experience.astro
+        │   │   ├── Hero.astro
+        │   │   ├── ProjectCarousel.tsx
+        │   │   └── Skills.astro
+        │   └── ui/
+        │       ├── Button.tsx
+        │       └── Link.tsx
+        ├── content/
+        │   ├── experiences.ts
+        │   ├── navlinks.ts
+        │   └── projects.ts
+        ├── layout/
+        │   ├── BaseLayout.astro
+        │   ├── Footer.astro
+        │   ├── FullScreenNav.tsx
+        │   └── Header.tsx
+        ├── pages/
+        │   └── index.astro
+        └── styles/
+            └── global.css

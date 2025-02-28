@@ -1,0 +1,1242 @@
+================================================
+File: README.md
+================================================
+# [rogeonee.dev](https://rogeonee-dev.vercel.app/)
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+
+================================================
+File: astro.config.mjs
+================================================
+import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
+import vercel from "@astrojs/vercel/serverless";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [tailwind(), react()],
+  output: "server",
+  adapter: vercel()
+});
+
+================================================
+File: package.json
+================================================
+{
+  "name": "rogeonee-dev",
+  "type": "module",
+  "version": "1.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vercel": "^7.8.2",
+    "@fontsource/inter": "^5.0.18",
+    "@fontsource/poppins": "^5.0.14",
+    "@phosphor-icons/react": "^2.1.5",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.16.7",
+    "astro-seo": "^0.8.4",
+    "class-variance-authority": "^0.7.0",
+    "classnames": "^2.5.1",
+    "framer-motion": "^11.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
+  }
+}
+
+
+================================================
+File: tailwind.config.mjs
+================================================
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    fontFamily: {
+      inter: ["var(--font-inter)", "sans-serif"],
+      poppins: ["var(--font-poppins)", "sans-serif"],
+      sans: ["var(--font-inter)", "var(--font-poppins)", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        accent: "#FF8000",
+        primary: "#F5F0E8",
+        secondary: "#101010",
+        gray: {
+          dark: "#343233",
+          light: "#5A5658",
+          extralight: "#E0E0E0",
+        },
+      },
+      screens: {
+        md: "1050px",
+        tall: { raw: "(min-height: 1000px)" },
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.gray.dark"),
+            "h2, h3, h4": {
+              "scroll-margin-top": "8rem",
+            },
+          },
+        },
+      }),
+    },
+  },
+  plugins: [],
+};
+
+
+================================================
+File: tsconfig.json
+================================================
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strict": true,
+  }
+}
+
+================================================
+File: .prettierignore
+================================================
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+
+================================================
+File: .prettierrc
+================================================
+{
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": false,
+    "printWidth": 100,
+    "tabWidth": 2
+}
+
+================================================
+File: public/robots.txt
+================================================
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.rogeonee.com/
+
+# Sitemaps
+Sitemap: https://www.rogeonee.com/sitemap.xml
+
+
+================================================
+File: public/sitemap.xml
+================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.rogeonee.com/</loc>
+    <lastmod>2024-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+
+
+================================================
+File: src/env.d.ts
+================================================
+/// <reference path="../.astro/types.d.ts" />
+/// <reference types="astro/client" />
+
+
+================================================
+File: src/components/icons/arr-left.tsx
+================================================
+import { ArrowLeft as _ArrowLeft } from "@phosphor-icons/react/dist/csr/ArrowLeft";
+export const ArrowLeft = _ArrowLeft;
+
+
+================================================
+File: src/components/icons/arr-right-up.tsx
+================================================
+import { ArrowUpRight as _ArrowUpRight } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
+export const ArrowUpRight = _ArrowUpRight;
+
+
+================================================
+File: src/components/icons/arr-right.tsx
+================================================
+import { ArrowRight as _ArrowRight } from "@phosphor-icons/react/dist/csr/ArrowRight";
+export const ArrowRight = _ArrowRight;
+
+
+================================================
+File: src/components/icons/github-logo.tsx
+================================================
+import { GithubLogo as _GithubLogo } from "@phosphor-icons/react/dist/csr/GithubLogo";
+export const GithubLogo = _GithubLogo;
+
+
+================================================
+File: src/components/icons/linkedin-logo.tsx
+================================================
+import { LinkedinLogo as _LinkedinLogo } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
+export const LinkedinLogo = _LinkedinLogo;
+
+
+================================================
+File: src/components/icons/twitter-logo.tsx
+================================================
+import { TwitterLogo as _TwitterLogo } from "@phosphor-icons/react/dist/csr/TwitterLogo";
+export const TwitterLogo = _TwitterLogo;
+
+
+================================================
+File: src/components/sections/About.astro
+================================================
+<section id="about" class="bg-secondary text-primary">
+  <div class="mx-auto max-w-6xl w-full py-40 px-5 md:px-0">
+    <h2 class="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+      About me<span class="text-accent">.</span>
+    </h2>
+
+    <div class="max-w-xl font-medium">
+      <p class="font-poppins font-medium text-lg sm:text-xl mt-10">
+        Hey, I'm Egor! A software developer, and a student in Kelowna, BC at UBC Okanagan. I moved
+        here almost 4 years ago from Russia, and I've been studying computer science ever since. Now
+        it's my final year here, and I'm rapidly expanding my skillset within web and mobile
+        development leveraging React and React Native.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+================================================
+File: src/components/sections/Contact.astro
+================================================
+---
+import { Link } from "../ui/Link.tsx";
+import { ArrowUpRight } from "../icons/arr-right-up.tsx";
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/rogeonee" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/egor-bezriadin/" },
+];
+---
+
+<section id="contact" class="bg-secondary text-primary">
+  <div class="mx-auto max-w-6xl w-full py-32 px-5 md:px-0">
+    <h2 class="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+      Let's connect<span class="text-accent">.</span>
+    </h2>
+
+    <div class="flex flex-col md:flex-row mt-14 gap-12">
+      <div class="w-full md:max-w-md">
+        <p class="font-poppins font-medium text-lg text-inter">
+          I'm always open to collaborating on new projects or helping with website redesigns. If you
+          need any help within my expertise, I'm here for you. You can reach out to me through email
+          or connect with me on LinkedIn to discuss what's on your mind.
+        </p>
+        <p class="font-poppins font-medium text-lg text-inter mt-4">
+          Let's build something awesome together!
+        </p>
+      </div>
+
+      <div class="w-full md:w-auto md:ml-auto text-center md:text-right">
+        <div class="flex flex-col h-full items-center md:items-end">
+          <ul class="flex flex-col gap-y-4 items-center md:items-end">
+            {
+              socialLinks.map((link) => (
+                <li class="group text-center md:text-right">
+                  <Link
+                    href={link.url}
+                    override={true}
+                    className="flex items-center justify-center md:justify-end gap-2 text-gray-extralight hover:text-primary font-medium text-lg"
+                  >
+                    {link.name}
+                    <ArrowUpRight
+                      className="group-hover:scale-110 origin-bottom-left transition"
+                      width={16}
+                      height={16}
+                    />
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+
+          <div class="mt-8 md:mt-auto">
+            <p class="uppercase text-lg font-semibold mb-2 text-gray-extralight font-poppins">
+              email me directly
+            </p>
+            <Link
+              href="mailto:egor.bezriadin.01@gmail.com"
+              className="text-primary font-medium text-lg"
+              override={true}
+            >
+              egor.bezriadin.01@gmail.com
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+================================================
+File: src/components/sections/Experience.astro
+================================================
+---
+import { Link } from "../ui/Link";
+import { experiences } from "../../content/experiences";
+---
+
+<section>
+  <div class="mx-auto max-w-6xl w-full py-40 px-5 md:px-0">
+    <h2 class="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+      Work Experience<span class="text-accent">.</span>
+    </h2>
+
+    <ul class="flex flex-col mt-5">
+      {
+        experiences.map((exp) => (
+          <li class="mt-5">
+            <Link href={exp.link} override={true}>
+              <div class="group flex flex-col sm:flex-row justify-between w-full">
+                <h3 class="font-poppins font-medium text-lg sm:text-xl font-semibold group-hover:underline">
+                  {exp.company}
+                </h3>
+
+                <div class="flex flex-col sm:flex-row sm:gap-4 justify-between w-full sm:max-w-fit">
+                  <h4 class="font-poppins font-medium text-lg sm:text-xl text-gray-dark mt-1 min-w-fit">
+                    {exp.position}
+                  </h4>
+                  <h5 class="font-poppins font-medium text-lg sm:text-xl text-gray-light mt-1 min-w-fit">
+                    {exp.timePeriod}
+                  </h5>
+                </div>
+              </div>
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+
+================================================
+File: src/components/sections/Hero.astro
+================================================
+<section
+  class="min-h-[calc(100vh-70px)] flex flex-col justify-center gap-y-10 overflow-x-hidden md:pb-0"
+>
+  <div
+    class="px-5 md:px-0 mb-0 flex flex-col md:flex-row w-full max-w-6xl mx-auto md:items-center gap-10 md:justify-between"
+  >
+    <h1 class="text-[clamp(2rem,10vw,4.5rem)] font-bold leading-tight w-full md:min-w-[530px]">
+      Frontend developer
+      <br />
+      by day,
+      <br />
+      space admirer
+      <br />
+      by night 🚀
+    </h1>
+    <div
+      class="mt-8 md:mt-0 text-base sm:text-lg md:text-lg max-w-lg w-fit font-medium font-inter text-gray-light"
+    >
+      <p>
+        Aspiring developer with a robust background in web and native app development. Proficient in
+        TypeScript and Python, and skilled at integrating frontend elegance with backend
+        functionality.
+        <br />
+        <br />
+        Interested in cutting-edge tech, and everything that goes fast, either on the ground, in the
+        air, or in orbit. Hopefully, I will say 'Thank you JS for a Lambo!' one day! 🐂
+      </p>
+    </div>
+  </div>
+</section>
+
+
+================================================
+File: src/components/sections/ProjectCarousel.tsx
+================================================
+import { useState } from "react";
+import { Button } from "../ui/Button.tsx";
+import { Link } from "../ui/Link.tsx";
+import { ArrowRight } from "../icons/arr-right.tsx";
+import { ArrowLeft } from "../icons/arr-left.tsx";
+import { projects } from "../../content/projects.ts";
+
+function ProjectsCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  const nextProject = () => {
+    setCurrent((current + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrent((current - 1 + projects.length) % projects.length);
+  };
+
+  const project = projects[current];
+
+  return (
+    <section
+      id="projects"
+      className="mx-auto max-w-6xl w-full py-32 px-5 md:px-0 overflow-x-hidden"
+    >
+      <header className="flex flex-col gap-y-5 sm:flex-row sm:items-center justify-between">
+        <h2 className="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+          Projects<span className="text-accent">.</span>
+        </h2>
+        <Link
+          className="max-w-fit"
+          intent="secondary"
+          extras="icon"
+          href="https://github.com/rogeonee"
+        >
+          See more projects
+          <ArrowRight className="ml-1.5" width={20} height={20} />
+        </Link>
+      </header>
+
+      <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth">
+        <article className="mt-20 flex-none snap-start flex w-full flex-col md:flex-row gap-10 items-center px-3">
+          <img
+            width={500}
+            height={350}
+            alt={project.title}
+            draggable={false}
+            className="rounded-2xl shadow-md w-full md:max-w-[50%] md:h-80 object-cover"
+            src={project.coverImage}
+            loading="lazy"
+          />
+
+          <div className="flex flex-col w-full text-left">
+            <header className="flex flex-col-reverse">
+              <h3 className="font-bold font-poppins text-4xl">{project.title}</h3>
+              <h4 className="font-semibold text-2xl">0{current + 1} —</h4>
+            </header>
+
+            <p className="mt-5 text-lg text-gray-light h-full md:h-[140px]">
+              {project.description}
+            </p>
+
+            <hr className="border-gray-light border w-full my-10" />
+
+            <div className="flex gap-3 items-center justify-between">
+              <Link href={project.link} className="max-w-fit" extras="icon" intent="secondary">
+                View full project
+                <ArrowRight width={20} height={20} />
+              </Link>
+
+              <div className="flex gap-x-1">
+                <Button
+                  aria-label="Previous Project"
+                  onClick={prevProject}
+                  intent="secondary"
+                  size="square"
+                >
+                  <ArrowLeft width={20} height={20} />
+                </Button>
+                <Button aria-label="Next Project" onClick={nextProject} size="square">
+                  <ArrowRight width={20} height={20} />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+export default ProjectsCarousel;
+
+
+================================================
+File: src/components/sections/Skills.astro
+================================================
+---
+import React from "react";
+const skills = [
+  {
+    header: "Frontend",
+    list: "TypeScript\nJavaScript\nReact\nReact Native\nNext.js\nTailwind CSS",
+  },
+  {
+    header: "Backend",
+    list: "Python\nDjango\nNode.js\nPostgreSQL\nFirebase\nREST APIs",
+  },
+  {
+    header: "Other",
+    list: "Git & GitHub\nExpo\nDocker\nC#\nFigma\nAgile",
+  },
+];
+---
+
+<section class="bg-secondary text-primary">
+  <div class="mx-auto max-w-6xl w-full py-40 px-5 md:px-0">
+    <h2 class="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
+      My skills<span class="text-accent">.</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-32 w-full">
+      {
+        skills.map((item, idx) => {
+          const allSkills = item.list.split("\n").filter(Boolean);
+
+          return (
+            <React.Fragment>
+              <h3 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold lowercase md:h-40">
+                <span class="inline-block w-[50px] sm:w-[73px] text-start">0{idx + 1}</span> —{" "}
+                {item.header}
+              </h3>
+
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 max-w-md">
+                {allSkills.map((skill) => {
+                  return <li class="font-poppins font-medium text-lg sm:text-xl">{skill}</li>;
+                })}
+              </ul>
+            </React.Fragment>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+
+================================================
+File: src/components/ui/Button.tsx
+================================================
+import { type VariantProps, cva } from "class-variance-authority";
+import { type HTMLMotionProps, m as motion } from "framer-motion";
+
+const button = cva(["border-2 text-base font-inter font-medium outline-none"], {
+  variants: {
+    intent: {
+      primary:
+        "bg-black border-2 border-gray-light hover:border-accent focus:border-accent focus:bg-accent text-primary",
+      secondary:
+        "border-2 border-gray-light text-secondary hover:border-accent focus:border-accent",
+      "secondary-light":
+        "border-2 border-gray-light text-primary hover:border-accent focus:border-accent",
+      error: "border-2 border-red-600 text-red-400 hover:border-red-700 focus:border-red-700",
+      success:
+        "border-2 border-green-600 text-green-400 hover:border-green-600 focus:border-green-600",
+    },
+    size: {
+      default: "px-4 py-1.5 rounded-2xl",
+      square: "w-10 h-10 grid place-items-center rounded-full",
+    },
+    extras: {
+      icon: "flex items-center gap-2",
+      loading: "relative flex items-center justify-center bg- text-transparent",
+    },
+  },
+  defaultVariants: {
+    intent: "primary",
+    size: "default",
+  },
+});
+
+type ButtonProps = HTMLMotionProps<"button"> & VariantProps<typeof button>;
+
+export function Button(props: ButtonProps) {
+  return (
+    <motion.button
+      {...props}
+      whileHover={{
+        scale: 1.03,
+      }}
+      whileTap={{ scale: 0.92 }}
+      className={button({
+        className: props.className,
+        intent: props.intent,
+        extras: props.extras,
+        size: props.size,
+      })}
+    >
+      {/* framer motion requires 1 ReactNode */}
+      <>
+        {props.children}
+        {props.extras === "loading" ? (
+          <span className="absolute">
+            <svg
+              aria-hidden="true"
+              className="w-6 h-6 mr-2 text-gray-light animate-spin fill-accent"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="currentColor"
+              />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentFill"
+              />
+            </svg>
+          </span>
+        ) : null}
+      </>
+    </motion.button>
+  );
+}
+
+
+================================================
+File: src/components/ui/Link.tsx
+================================================
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const linkStyles = cva(
+  ["border-2 rounded-2xl text-base font-inter font-medium transition outline-none"],
+  {
+    variants: {
+      intent: {
+        primary:
+          "bg-gray-dark border-2 border-gray-light hover:border-accent hover:bg-accent hover:text-secondary text-primary focus-visible:bg-accent focus-visible:border-accent",
+        secondary:
+          "border-2 border-gray-light text-secondary hover:border-accent focus-visible:border-accent",
+        "secondary-light":
+          "border-2 border-gray-light text-primary hover:border-accent focus-visible:border-accent",
+        none: "border-transparent",
+      },
+      size: {
+        sm: "px-3 py-1 rounded-xl",
+        default: "px-4 py-1.5 rounded-2xl",
+        square: "min-w-[40px] w-10 h-10 grid place-items-center rounded-full",
+        none: "p-0",
+      },
+      extras: {
+        icon: "flex items-center gap-2 pr-2.5",
+      },
+    },
+    defaultVariants: {
+      intent: "primary",
+      size: "default",
+    },
+  },
+);
+
+type CustomLinkProps = {
+  href: string;
+  className?: string;
+  intent?: "primary" | "secondary" | "secondary-light" | "none";
+  size?: "sm" | "default" | "square" | "none";
+  extras?: "icon";
+  children: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  override?: boolean;
+} & VariantProps<typeof linkStyles>;
+
+export function Link({
+  href,
+  children,
+  className,
+  intent,
+  size,
+  extras,
+  override,
+  ...props
+}: CustomLinkProps) {
+  const isExternal = href.startsWith("http://") || href.startsWith("https://");
+
+  // Build className dynamically
+  const dynamicClassName = override
+    ? className
+    : linkStyles({
+        className,
+        intent,
+        size,
+        extras,
+      });
+
+  const commonProps = {
+    ...props,
+    href,
+    className: dynamicClassName,
+  };
+
+  if (isExternal) {
+    return (
+      <a
+        {...commonProps}
+        href={href}
+        className={dynamicClassName}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <a {...commonProps} href={href} className={dynamicClassName}>
+      {children}
+    </a>
+  );
+}
+
+
+================================================
+File: src/content/experiences.ts
+================================================
+export const experiences = [
+  {
+    company: "University of British Columbia",
+    position: "Web Developer / Research Assistant",
+    timePeriod: "Sep 2024 - Present",
+    link: "https://healthenow.com/",
+  },
+  {
+    company: "KinCapsule",
+    position: "Frontend Software Engineer",
+    timePeriod: "Sep 2024 - Present",
+    link: "https://www.kincapsule.com/",
+  },
+  {
+    company: "Virtulynx Inc.",
+    position: "Full-stack Web Developer",
+    timePeriod: "May 2024 - Sep 2024",
+    link: "https://www.virtulynx.ca/",
+  },
+  {
+    company: "Stampix",
+    position: "Student Mobile Software Engineer",
+    timePeriod: "Jun 2024 - Jul 2024",
+    link: "https://stampix.com/",
+  },
+  {
+    company: "Okanagan Tech Industry Night",
+    position: "Frontend Web Developer",
+    timePeriod: "Jan 2024 - Feb 2024",
+    link: "https://www.okgntechindustrynight.com/",
+  },
+  {
+    company: "University of British Columbia",
+    position: "Student Mobile Software Engineer",
+    timePeriod: "Sep 2023 - Apr 2024",
+    link: "https://github.com/COSC-499-W2023/year-long-project-team-21",
+  },
+];
+
+
+================================================
+File: src/content/navlinks.ts
+================================================
+export const navLinks = [
+  { name: "Home", pathname: "/" },
+  { name: "About", pathname: "/#about" },
+  { name: "Projects", pathname: "/#projects" },
+  { name: "Contact", pathname: "/#contact" },
+];
+
+
+================================================
+File: src/content/projects.ts
+================================================
+export const projects = [
+  {
+    title: "Konvert",
+    coverImage: "/projects/konvert.webp",
+    description:
+      "A minimalistic website for converting HEIC images to JPG/PNG with a focus on simplicity and functionality. Built with Next.js, TypeScript, and shadcn components. Heavily inspired by Vercel's design code, still a work in progress.",
+    link: "https://www.knvrt.one/",
+  },
+  {
+    title: "Virtulynx",
+    coverImage: "/projects/virtulynx.webp",
+    description:
+      "A Facebook Marketplace Platform, built with Next.js, Node.js, and TypeScript all over. Unfortunately, will never face production due to Meta restrictions and disagreement amongst team members.",
+    link: "https://www.virtulynx.ca/",
+  },
+  {
+    title: "Personal (this) Website",
+    coverImage: "/og-image.png",
+    description:
+      "Developed (this) personal portfolio website with Astro.js, TypeScript, and Tailwind CSS to showcase professional experience and projects.",
+    link: "https://www.rogeonee.com/",
+  },
+  {
+    title: "Stampix AI Field Test App",
+    coverImage: "/projects/stampix.webp",
+    description:
+      "Developed an Expo React Native mobile app for testing AI models in photobook creation and integrated RESTful API with Next.js to interact with AWS.",
+    link: "https://stampix.com/en-be/download",
+  },
+  {
+    title: "LoseTheLeftovers",
+    coverImage: "/projects/leftovers.webp",
+    description:
+      "Developed a cross-platform mobile application for leftover food sharing, focusing on front-end development with React Native to create a seamless UI, and integrated with a custom Django backend using RESTful services. Utilized Agile to ensure efficient project progression and timely delivery.",
+    link: "https://github.com/COSC-499-W2023/year-long-project-team-21",
+  },
+  {
+    title: "Okanagan Tech Industry Night Website",
+    coverImage: "/projects/okgn.webp",
+    description:
+      "Led the design and implementation of a voting system for a student competition, enabling 220-240 attendees to influence results. This project fostered collaboration between UBCO and OKC IEEE Student Branches.",
+    link: "https://www.okgntechindustrynight.com/",
+  },
+];
+
+
+================================================
+File: src/layout/BaseLayout.astro
+================================================
+---
+import { ViewTransitions } from "astro:transitions";
+import { Header } from "./Header.tsx";
+import Footer from "./Footer.astro";
+import "../styles/global.css";
+import { SEO } from "astro-seo";
+
+const title = "Egor Bezriadin - Software Developer";
+const description =
+  "An aspiring web and mobile developer proficient in React.js, React Native, TypeScript, JavaScript, and other frontend-focused tools and frameworks.";
+const keywords = [
+  "egor bezriadin",
+  "rogeonee",
+  "roge_one_",
+  "canada",
+  "web developer",
+  "mobile developer",
+  "konvert",
+].join(", ");
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <SEO
+      title={title}
+      description={description}
+      canonical="https://www.rogeonee.com/"
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image: "https://www.rogeonee.com/og-image.png",
+          url: "https://www.rogeonee.com/",
+        },
+        optional: {
+          description: description,
+          locale: "en-US",
+          siteName: "rogeonee",
+        },
+      }}
+      ,
+      twitter={{
+        card: "summary_large_image",
+        creator: "@roge_one_",
+        title: title,
+        description: description,
+        image: "https://www.rogeonee.com/og-image.png",
+      }}
+      ,
+      extend={{
+        meta: [
+          {
+            name: "keywords",
+            content: keywords,
+          },
+        ],
+      }}
+    />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5S5P7SKF8E"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5S5P7SKF8E");
+    </script>
+  </head>
+
+  <body>
+    <Header client:only="react" transition:persist />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+
+================================================
+File: src/layout/Footer.astro
+================================================
+---
+import { Link } from "../components/ui/Link";
+---
+
+<footer class="w-full px-5 sm:px-0 pt-8 pb-10 sm:pb-5">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between">
+    <div
+      class="text-center sm:text-left mb-5 sm:mb-0 font-poppins text-gray-dark font-medium w-full sm:w-auto"
+    >
+      <p>Created by Egor 🐦‍⬛</p>
+      <p>
+        Built with
+        <Link
+          href="https://astro.build"
+          override={true}
+          className="underline text-gray-dark hover:text-black transition-colors"
+        >
+          Astro 🚀
+        </Link>
+      </p>
+    </div>
+
+    <div
+      class="flex flex-col sm:flex-row gap-2 mt-5 sm:mt-0 w-full sm:w-auto justify-center sm:justify-end"
+    >
+      <Link
+        href="https://github.com/rogeonee"
+        override={true}
+        className="underline text-gray-dark hover:text-black transition-colors"
+      >
+        GitHub
+      </Link>
+      <Link
+        href="https://linkedin.com/in/egor-bezriadin/"
+        override={true}
+        className="underline text-gray-dark hover:text-black transition-colors"
+      >
+        LinkedIn
+      </Link>
+    </div>
+  </div>
+</footer>
+
+
+================================================
+File: src/layout/FullScreenNav.tsx
+================================================
+import { motion, type Variants } from "framer-motion";
+import { X } from "@phosphor-icons/react/dist/csr/X";
+import { GithubLogo } from "../components/icons/github-logo.tsx";
+import { LinkedinLogo } from "../components/icons/linkedin-logo.tsx";
+import { Link } from "../components/ui/Link.tsx";
+import { navLinks } from "../content/navlinks.ts";
+
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/rogeonee", icon: GithubLogo },
+  { name: "LinkedIn", url: "https://linkedin.com/in/egor-bezriadin/", icon: LinkedinLogo },
+];
+
+interface FullScreenNavProps {
+  isOpen: boolean;
+  onClose(): void;
+}
+
+const variants: Variants = {
+  open: {
+    height: "100%",
+    pointerEvents: "all",
+    opacity: 1,
+  },
+  closed: {
+    height: 0,
+    pointerEvents: "none",
+    opacity: 0,
+  },
+};
+
+export function FullScreenNav(props: FullScreenNavProps) {
+  if (!props.isOpen) {
+    return null;
+  }
+
+  return (
+    <motion.div
+      initial="closed"
+      animate={props.isOpen ? "open" : "closed"}
+      variants={variants}
+      className="bg-secondary text-primary fixed top-0 left-0 w-screen min-h-screen py-16 md:py-32 overflow-auto"
+    >
+      <div className="mx-auto max-w-6xl px-5 md:px-0">
+        <div className="flex flex-row justify-between">
+          <ul className="flex flex-col gap-y-8">
+            {navLinks.map((link) => (
+              <li key={link.pathname}>
+                <Link
+                  href={link.pathname}
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold hover:text-accent transition"
+                  onClick={() => {
+                    props.onClose();
+                  }}
+                  override={true}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <motion.button
+            aria-label="Close Menu"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.92 }}
+            onClick={props.onClose}
+            className="h-16 group"
+          >
+            <X className="h-16 w-16 group-hover:fill-accent transition" />
+          </motion.button>
+        </div>
+
+        <ul className="mt-20 md:mt-32 flex flex-row gap-10">
+          {socialLinks.map((link) => (
+            <li key={link.url}>
+              <Link
+                href={link.url}
+                aria-label={link.name}
+                onClick={() => {
+                  props.onClose();
+                }}
+                override={true}
+              >
+                <link.icon className="w-9 h-9 sm:w-12 sm:h-12 md:w-16 md:h-16 hover:fill-accent transition" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+}
+
+
+================================================
+File: src/layout/Header.tsx
+================================================
+import React from "react";
+import classNames from "classnames";
+import { motion, type Variants } from "framer-motion";
+import { FullScreenNav } from "./FullScreenNav.tsx";
+import { Link } from "../components/ui/Link.tsx";
+import { navLinks } from "../content/navlinks.ts";
+
+const variants: Variants = {
+  initial: {
+    opacity: 0,
+    width: 0,
+  },
+  hover: {
+    opacity: 0.5,
+    width: "60%",
+  },
+  active: {
+    opacity: 1,
+    width: "50%",
+  },
+};
+
+export function Header() {
+  // Track current pathname
+  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  // Update path on change
+  React.useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    // Listen for changes in history to update pathname
+    window.addEventListener("popstate", handleLocationChange);
+    return () => window.removeEventListener("popstate", handleLocationChange);
+  }, []);
+
+  return (
+    <header className="w-full py-7 px-5 md:px-0 sticky top-0 bg-primary z-50 border-b-[1px] border-gray-400">
+      <nav className="w-full mx-auto flex items-center justify-between font-poppins max-w-6xl">
+        <ul className="flex items-center gap-5">
+          {navLinks.map((link) => {
+            const isRouteActive = currentPath === link.pathname;
+
+            return (
+              <motion.li
+                initial="initial"
+                whileHover="hover"
+                animate={isRouteActive ? "active" : "initial"}
+                key={link.pathname}
+                style={{ position: "relative" }}
+              >
+                <Link
+                  className={classNames("relative block", isRouteActive && "font-semibold")}
+                  href={link.pathname}
+                  onClick={() => {
+                    if (window.location.pathname !== link.pathname) {
+                      window.history.pushState({}, "", link.pathname);
+                      window.dispatchEvent(new Event("popstate"));
+                    }
+                  }}
+                  override={true}
+                >
+                  {link.name}
+                </Link>
+                <motion.span
+                  variants={variants}
+                  className="absolute block left-0 -bottom-1 w-1/2 h-[2px] bg-secondary rounded-2xl"
+                  style={{ backgroundColor: "black" }}
+                />
+              </motion.li>
+            );
+          })}
+        </ul>
+
+        <button
+          aria-label="Open Menu"
+          onClick={() => setIsMenuOpen(true)}
+          className="flex flex-col items-end gap-y-1.5 w-8 md:w-10 hover:gap-y-2 transition-all ease-in-out duration-100 group"
+        >
+          <span
+            className="h-0.5 bg-secondary group-hover:bg-accent w-full"
+            style={{ backgroundColor: "black" }}
+          />
+          <span
+            className="h-0.5 bg-secondary group-hover:bg-accent w-2/3"
+            style={{ backgroundColor: "black" }}
+          />
+          <span
+            className="h-0.5 bg-secondary group-hover:bg-accent w-full"
+            style={{ backgroundColor: "black" }}
+          />
+        </button>
+      </nav>
+
+      <FullScreenNav isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+    </header>
+  );
+}
+
+
+================================================
+File: src/pages/index.astro
+================================================
+---
+import BaseLayout from "../layout/BaseLayout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Skills from "../components/sections/Skills.astro";
+import Experience from "../components/sections/Experience.astro";
+import About from "../components/sections/About.astro";
+import ProjectCarousel from "../components/sections/ProjectCarousel.tsx";
+import Contact from "../components/sections/Contact.astro";
+---
+
+<BaseLayout>
+  <Hero />
+  <Skills />
+  <Experience />
+  <About />
+  <ProjectCarousel client:idle />
+  <Contact />
+</BaseLayout>
+
+
+================================================
+File: src/styles/global.css
+================================================
+@import "@fontsource/inter";
+@import "@fontsource/poppins";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme("colors.primary");
+    color: theme("colors.secondary");
+    font-family: theme("fontFamily.inter");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: theme("fontFamily.poppins");
+  }
+
+  .custom-link {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
