@@ -20,7 +20,7 @@ export default function Hero() {
             <br />
             Interested in cutting-edge tech, and everything that goes fast,
             either on the ground, in the air, or in orbit. Hopefully, I will say
-            'Thank you JS for a Lambo!' one day! 🐂
+            ’Thank you JS for a Lambo!’ one day! 🐂
           </p>
         </div>
       </div>

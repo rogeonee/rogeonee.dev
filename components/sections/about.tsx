@@ -8,10 +8,10 @@ export default function About() {
 
         <div className="max-w-xl font-medium">
           <p className="font-poppins font-medium text-lg sm:text-xl mt-10">
-            Hey, I'm Egor! A software developer, and a student in Kelowna, BC at
-            UBC Okanagan. I moved here almost 4 years ago from Russia, and I've
-            been studying computer science ever since. Now it's my final year
-            here, and I'm rapidly expanding my skillset within web and mobile
+            Hey, I’m Egor! A software developer, and a student in Kelowna, BC at
+            UBC Okanagan. I moved here almost 4 years ago from Russia, and I’ve
+            been studying computer science ever since. Now it’s my final year
+            here, and I’m rapidly expanding my skillset within web and mobile
             development leveraging React and React Native.
           </p>
         </div>

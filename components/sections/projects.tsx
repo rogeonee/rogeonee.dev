@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '../ui/orig-button';
 import { OrigLink as Link } from '../layout/link';
 import { ArrowRight } from 'lucide-react';
@@ -42,7 +43,7 @@ export default function ProjectsCarousel() {
 
       <div className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth">
         <article className="mt-20 flex-none snap-start flex w-full flex-col md:flex-row gap-10 items-center px-3">
-          <img
+          <Image
             width={500}
             height={350}
             alt={project.title}

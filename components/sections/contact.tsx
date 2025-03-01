@@ -11,19 +11,19 @@ export default function Contact() {
     <section id="contact" className="bg-secondary text-primary">
       <div className="mx-auto max-w-6xl w-full py-32 px-5 md:px-0">
         <h2 className="font-poppins font-bold text-5xl md:text-6xl relative max-w-fit">
-          Let's connect<span className="text-accent">.</span>
+          Let’s connect<span className="text-accent">.</span>
         </h2>
 
         <div className="flex flex-col md:flex-row mt-14 gap-12">
           <div className="w-full md:max-w-md">
             <p className="font-poppins font-medium text-lg text-inter">
-              I'm always open to collaborating on new projects or helping with
-              website redesigns. If you need any help within my expertise, I'm
+              I’m always open to collaborating on new projects or helping with
+              website redesigns. If you need any help within my expertise, I’m
               here for you. You can reach out to me through email or connect
-              with me on LinkedIn to discuss what's on your mind.
+              with me on LinkedIn to discuss what’s on your mind.
             </p>
             <p className="font-poppins font-medium text-lg text-inter mt-4">
-              Let's build something awesome together!
+              Let’s build something awesome together!
             </p>
           </div>
 
