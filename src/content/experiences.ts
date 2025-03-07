@@ -1,19 +1,19 @@
 export const experiences = [
   {
-    company: "University of British Columbia",
-    position: "Web Developer / Research Assistant",
-    timePeriod: "Sep 2024 - Present",
-    link: "https://healthenow.com/",
-  },
-  {
     company: "KinCapsule",
     position: "Frontend Software Engineer",
     timePeriod: "Sep 2024 - Present",
     link: "https://www.kincapsule.com/",
   },
   {
+    company: "University of British Columbia",
+    position: "Web Developer / Research Assistant",
+    timePeriod: "Sep 2024 - Dec 2024",
+    link: "https://healthenow.com/",
+  },
+  {
     company: "Virtulynx Inc.",
-    position: "Full-stack Web Developer",
+    position: "Full-stack Software Engineer",
     timePeriod: "May 2024 - Sep 2024",
     link: "https://www.virtulynx.ca/",
   },

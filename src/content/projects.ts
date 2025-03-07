@@ -3,8 +3,8 @@ export const projects = [
     title: "Konvert",
     coverImage: "/projects/konvert.webp",
     description:
-      "A minimalistic website for converting HEIC images to JPG/PNG with a focus on simplicity and functionality. Built with Next.js, TypeScript, and shadcn components. Heavily inspired by Vercel's design code, still a work in progress.",
-    link: "https://konvert-sigma.vercel.app/",
+      "Konvert is a minimalist image format conversion tool that supports HEIC, AVIF, and WebP to JPG/PNG. Designed for speed, privacy, and simplicity, it requires zero uploads, ensuring your images stay on your device.",
+    link: "https://www.knvrt.one/",
   },
   {
     title: "Virtulynx",
