@@ -1,0 +1,129 @@
+---
+import { ArrowOutward } from "@icons/ArrowOutward";
+import { X } from "@icons/X";
+
+import Link from "@/components/Link";
+import { SOCIAL_MEDIA_DATA } from "@/components/socialMediaData";
+// import { mainMetaData } from "@/lib/metaData";
+
+type FooterContent = {
+  title: string;
+  links: {
+    text: string;
+    href: string;
+    withIcon?: boolean;
+    inNewTab?: boolean;
+  }[];
+};
+
+const socialMediaData = [
+  ...SOCIAL_MEDIA_DATA,
+  { icon: X, href: "https://x.com/roge_one_", name: "twitter" },
+];
+
+const FOOTER_CONTENTS: FooterContent[] = [
+  {
+    title: "Me",
+    links: [{ text: "Projects", href: "/#projects" }],
+  },
+  {
+    title: "This site",
+    links: [
+      {
+        text: "Source code",
+        href: "https://github.com/rogeonee/rogeonee.dev",
+        inNewTab: true,
+      },
+    ],
+  },
+];
+---
+
+<footer class="relative mt-auto w-full">
+  <div
+    class:list={[
+      "-z-10 h-48 w-3/5 opacity-25 blur-[160px]",
+      "absolute left-1/2 top-0 -translate-x-1/2 xs:top-24",
+    ]}
+  >
+  </div>
+
+  <!-- separator -->
+  <div
+    class:list={[
+      "h-[1px] w-full",
+      "bg-gradient-to-r from-zinc-800/25 via-zinc-800/75 to-zinc-800/25",
+    ]}
+  >
+  </div>
+
+  <!-- footer content -->
+  <div class="flex justify-center bg-zinc-950 pb-16 pt-20 max-[960px]:pb-8">
+    <div
+      class:list={[
+        "flex items-stretch justify-between text-sm tracking-wide",
+        "w-full px-12 max-sm:px-4 min-[1200px]:w-[1200px]",
+        "gap-12 max-[960px]:flex-col-reverse",
+      ]}
+    >
+      <div class="space-y-24">
+        <div class="space-y-3">
+          <p class="text-lg leading-none text-zinc-200">
+            <span class="tracking-widest"> rogeonee </span>
+            <span class="mx-[2px]">•</span> Egor
+          </p>
+        </div>
+        <div class="space-y-6">
+          <ul class="flex gap-3 text-zinc-200">
+            {
+              socialMediaData.map(({ icon: Icon, href, name }) => (
+                <li>
+                  <Link href={href} target="_blank" aria-label={name} class="group">
+                    <Icon className="size-5 rounded group-focus-within:outline outline-offset-4 outline-emerald-300" />
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="text-xs text-zinc-500">
+            &copy; {new Date().getFullYear()} Egor. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class:list={[
+          "flex flex-col justify-center max-xs:gap-16",
+          "max-[960px]:flex-col-reverse max-[960px]:gap-12",
+          "text-zinc-200",
+        ]}
+      >
+        <div
+          class="grid grid-cols-2 gap-y-16 max-[960px]:max-w-[480px] max-xs:grid-cols-2 sm:gap-24"
+        >
+          {
+            FOOTER_CONTENTS.map(({ title, links }) => (
+              <div class="space-y-4">
+                <p class="text-zinc-200">{title}</p>
+                <ul class="flex flex-col gap-3 text-zinc-400">
+                  {links.map(({ text, href, withIcon, inNewTab }) => (
+                    <li>
+                      <Link
+                        href={href}
+                        target={inNewTab ? "_blank" : "_self"}
+                        class="flex items-center gap-1 font-normal hover:text-zinc-200"
+                      >
+                        <span>{text}</span>
+                        {withIcon && <ArrowOutward className="size-3" />}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
