@@ -30,13 +30,10 @@
   --width: 258;
   --bottom-nav-bar-offset: 32px;
   view-transition-name: --nav;
-
-  /* border: 1px solid #e0e0e0; /* Add your color */
-  /* border-radius: 8px; */
 }
 
 .nav svg {
-  color: #e0e0e0; /* Replace with your color */
+  color: #e0e0e0; /* gray-extralight */
 }
 
 ::view-transition-group(--nav) {
@@ -70,7 +67,7 @@
   border-radius: 100px;
   pointer-events: none;
   overflow: hidden;
-  border: 1px solid #ff8000;
+  border: 1px solid #ff8000; /* accent */
   z-index: 999999999;
 }
 

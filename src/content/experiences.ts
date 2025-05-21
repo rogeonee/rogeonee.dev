@@ -6,6 +6,12 @@ export const experiences = [
     link: "https://www.kincapsule.com/",
   },
   {
+    company: "Avicenna Technologies",
+    position: "Full-stack Software Engineer",
+    timePeriod: "Mar 2025 - May 2025",
+    link: "https://www.linkedin.com/in/wiser-health/",
+  },
+  {
     company: "University of British Columbia",
     position: "Web Developer / Research Assistant",
     timePeriod: "Sep 2024 - Dec 2024",
