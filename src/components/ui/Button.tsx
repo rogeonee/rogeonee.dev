@@ -1,5 +1,5 @@
 import { type VariantProps, cva } from "class-variance-authority";
-import { type HTMLMotionProps, m as motion } from "framer-motion";
+import { type HTMLMotionProps, m as motion } from "motion/react";
 
 const button = cva(["border-2 text-base font-inter font-medium outline-none"], {
   variants: {

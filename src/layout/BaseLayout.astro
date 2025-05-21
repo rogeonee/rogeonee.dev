@@ -1,7 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { Header } from "./Header.tsx";
-import Footer from "./Footer.astro";
+import BottomNavigationBar from "@/components/BottomNavBar";
+import Footer from "@/components/layout/Footer";
 import "../styles/global.css";
 import { SEO } from "astro-seo";
 
@@ -78,5 +79,6 @@ const keywords = [
     <Header client:only="react" transition:persist />
     <slot />
     <Footer />
+    <BottomNavigationBar client:only="react" transition:persist="navbar" />
   </body>
 </html>

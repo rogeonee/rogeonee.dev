@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants } from "motion/react";
 import { FullScreenNav } from "./FullScreenNav.tsx";
 import { Link } from "../components/ui/Link.tsx";
 import { navLinks } from "../content/navlinks.ts";

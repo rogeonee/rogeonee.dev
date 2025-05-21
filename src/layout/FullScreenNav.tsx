@@ -1,4 +1,4 @@
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants } from "motion/react";
 import { X } from "@phosphor-icons/react/dist/csr/X";
 import { GithubLogo } from "../components/icons/github-logo.tsx";
 import { LinkedinLogo } from "../components/icons/linkedin-logo.tsx";

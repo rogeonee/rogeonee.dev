@@ -1,0 +1,9 @@
+---
+import Link from './Link.astro'
+
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+
+const { class: className, ...rest } = Astro.props
+---
+
+<Link target='_blank' class={className} {...rest}><slot /></Link>
