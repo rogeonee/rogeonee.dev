@@ -8,7 +8,7 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "strict": true,
-        "paths": {
+    "paths": {
       "@/*": ["./src/*"],
       "@icons/*": ["./src/components/icons/*"]
     }
