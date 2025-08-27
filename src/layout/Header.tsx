@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import classNames from "classnames";
 import { motion, type Variants } from "motion/react";
 import { FullScreenNav } from "./FullScreenNav.tsx";
@@ -21,17 +21,17 @@ const variants: Variants = {
 };
 
 export function Header() {
-  // Track current pathname
-  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  // track current pathname
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Update path on change
-  React.useEffect(() => {
+  // update path on change
+  useEffect(() => {
     const handleLocationChange = () => {
       setCurrentPath(window.location.pathname);
     };
 
-    // Listen for changes in history to update pathname
+    // listen for changes in history to update pathname
     window.addEventListener("popstate", handleLocationChange);
     return () => window.removeEventListener("popstate", handleLocationChange);
   }, []);

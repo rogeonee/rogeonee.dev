@@ -3,7 +3,7 @@ export const experiences = [
     company: "KinCapsule",
     position: "Frontend Software Engineer",
     timePeriod: "Sep 2024 - Present",
-    link: "https://www.kincapsule.com/",
+    link: "https://www.kincapsule.ca/",
   },
   {
     company: "Avicenna Technologies",

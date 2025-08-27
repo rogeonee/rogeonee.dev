@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import ClientRouter from "astro/components/ClientRouter.astro";
 import { Header } from "./Header.tsx";
 import BottomNavigationBar from "@/components/BottomNavBar";
 import Footer from "@/components/layout/Footer";
@@ -26,7 +26,7 @@ const keywords = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <ViewTransitions />
+    <ClientRouter />
     <SEO
       title={title}
       description={description}
