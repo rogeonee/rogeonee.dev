@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
@@ -69,7 +68,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`font-sans antialiased`}>
         {children}
-        <Analytics />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5S5P7SKF8E"
           strategy="afterInteractive"
