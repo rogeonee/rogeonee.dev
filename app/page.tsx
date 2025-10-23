@@ -30,7 +30,7 @@ export default function SpacePage() {
           </h1>
 
           <p className="text-xl text-white/70 text-balance">
-            The next mission is being assembled in orbit.
+            The next mission is being assembled.
           </p>
 
           <div className="pt-4 flex items-center justify-center gap-2 text-lg text-white/60">

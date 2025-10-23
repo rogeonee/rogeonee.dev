@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.rogeonee.com/
-
-# Sitemaps
-Sitemap: https://www.rogeonee.com/sitemap.xml
